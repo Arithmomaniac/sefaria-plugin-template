@@ -1,0 +1,29 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Latest Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "node"
+
+      - name: Install Dependencies and Build
+        run: |
+          npm install
+          npx webpack
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages      # The branch the action should deploy to.
+          folder: dist          # The folder where the build output is located.

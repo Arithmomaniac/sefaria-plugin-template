@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",            // adjusted for browser modules, matching webpack settings
+    // "jsx": "react", // Removed as JSX is no longer used
+    "strict": true,
+    "outDir": "dist",              // output folder should match webpack.config.js
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,       // Added for better compatibility
+    "moduleResolution": "node",    // set for browser modules
+    "sourceMap": true              // Added for debugging
+  },
+  "include": [
+    "src/**/*.ts",                // Include all TS files in src
+    "plugin.ts"                   // Include the entry file (will be renamed)
+  ],
+  "exclude": [
+    "node_modules",               // Exclude node_modules
+    "dist"                        // Exclude build output
+  ]
+}
