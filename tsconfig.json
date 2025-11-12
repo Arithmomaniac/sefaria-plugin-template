@@ -8,7 +8,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,       // Added for better compatibility
     "moduleResolution": "node",    // set for browser modules
-    "sourceMap": true              // Added for debugging
+    "sourceMap": true,             // Added for debugging
+    "skipLibCheck": true           // Skip type checking of declaration files
   },
   "include": [
     "src/**/*.ts",                // Include all TS files in src

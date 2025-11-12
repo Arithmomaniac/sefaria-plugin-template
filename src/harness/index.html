@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sefaria Plugin Template</title>
+    <!-- Load client-zip from CDN as ES module -->
+    <script type="module">
+        import { downloadZip } from 'https://cdn.jsdelivr.net/npm/client-zip/index.js';
+        window.downloadZip = downloadZip;
+    </script>
     <script src="plugin.js"></script>
     <script src="index.js"></script>
+</head>
 <body>
     <div>
         <input type="text" id="sref" value="Genesis 1.1" placeholder="sref">
